@@ -22,7 +22,7 @@ namespace WildlifePark
         Console.WriteLine("See the current list of animals!");
         for (int i = 0; i < Animals.Count; i++)
         {
-          Console.WriteLine($"{i+1}. {Animals[i].GetName()}, {Animals[i].GetAge()} years old");
+          Console.WriteLine($"{Animals[i].GetID()}. {Animals[i].GetName()}, {Animals[i].GetAge()} years old");
         }
       } else {
         Console.WriteLine("There are no recorded animals in the Seattle Wildlife Park.");
@@ -38,7 +38,6 @@ namespace WildlifePark
       Console.WriteLine("Please enter the age of this animal.");
       int age = int.Parse(Console.ReadLine());
       Animal animal = new Animal(name, age);
-      animal.SetID();
       Animals.Add(animal);
       Console.WriteLine("Your animal has been added!");
       MainMenu();      

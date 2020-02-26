@@ -7,16 +7,12 @@ namespace WildlifePark.Wildlife
     private string _name;
     private int _age;
     private int _id;
-    private int _currentID = 0;
+    private static int _currentID = 0;
 
     public Animal(string name, int age)
     {
       _name = name;
       _age = age;
-    }
-
-    public void SetID()
-    {
       _currentID ++;
       _id = _currentID;
     }
