@@ -45,7 +45,7 @@ namespace WildlifePark
 
     public static void MainMenu()
     {
-      Console.WriteLine("MAIN MENU: ['1' to view the animals in the park, '2' to add a new animal, '3' to exit]");
+      Console.WriteLine("MAIN MENU: ['1' to view the animals in the park, '2' to add a new animal, '3' to exit, '4' to add a ranger name]");
 
       string menuChoice = Console.ReadLine();
 
@@ -60,6 +60,12 @@ namespace WildlifePark
       else if (menuChoice == "3") 
       {
 
+      }
+      else if (menuChoice == "4")
+      {
+        Console.WriteLine("Enter today's park ranger's name:");
+        string name = Console.ReadLine();
+        Console.WriteLine(Animal.RangerName(name));
       } 
       else 
       {

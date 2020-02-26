@@ -31,5 +31,10 @@ namespace WildlifePark.Wildlife
     {
       return _id;
     }
+
+    public static string RangerName(string name)
+    {
+      return $"Today's park ranger is {name}.";
+    }
   }
 }
