@@ -8,6 +8,7 @@ namespace WildlifePark.Wildlife
     private int _age;
     private int _id;
     private static int _currentID = 0;
+    private static string _ranger;
 
     public Animal(string name, int age)
     {
@@ -32,9 +33,24 @@ namespace WildlifePark.Wildlife
       return _id;
     }
 
-    public static string RangerName(string name)
+    public static string RangerMessage()
     {
-      return $"Today's park ranger is {name}.";
+      return $"Today's park ranger is {GetRanger()}.";
+    }
+
+    public static void SetRanger(string name)
+    {
+      _ranger = name;
+    }
+
+    public static string GetRanger()
+    {
+      return _ranger;
+    }
+
+    public static bool IsThereARanger()
+    {
+      return (_ranger != "");
     }
   }
 }

@@ -17,6 +17,11 @@ namespace WildlifePark
 
     public static void PrintList()
     {
+      if (Animal.IsThereARanger())
+      {
+        Console.WriteLine(Animal.RangerMessage());
+      }
+      
       if (Animals.Count > 0)
       {
         Console.WriteLine("See the current list of animals!");
@@ -27,6 +32,7 @@ namespace WildlifePark
       } else {
         Console.WriteLine("There are no recorded animals in the Seattle Wildlife Park.");
       }
+
       MainMenu();
     }
 
@@ -64,8 +70,12 @@ namespace WildlifePark
       else if (menuChoice == "4")
       {
         Console.WriteLine("Enter today's park ranger's name:");
-        string name = Console.ReadLine();
-        Console.WriteLine(Animal.RangerName(name));
+        Animal.SetRanger(Console.ReadLine());
+        if (Animal.IsThereARanger())
+        {
+          Console.WriteLine(Animal.RangerMessage());
+        }
+        MainMenu(); 
       } 
       else 
       {
